@@ -26,7 +26,7 @@ Folder Name   |  Description | Issue | Update Date |
 2-data-availability |  research of data availablity in Web2.0 & Web3.0 | [244](https://github.com/oceanprotocol/ocean/issues/244) | 01/31/2019
 3-uniswap | research of adding Ocean to Uniswap | [286](https://github.com/oceanprotocol/ocean/issues/286) | 03/04/2019
 4-chainlink | connect Ocean with Chainlink | [287](https://github.com/oceanprotocol/ocean/issues/287) | 03/07/2019
-5-random-number | integrate Uniswap and Chainlink into Ocean | [288](https://github.com/oceanprotocol/ocean/issues/288) | 03/19/2019
+5-random-number | integrate Uniswap and Chainlink into Ocean | [288](https://github.com/oceanprotocol/ocean/issues/288) | 08/22/2019
 
 
 ## Supporting Documents
