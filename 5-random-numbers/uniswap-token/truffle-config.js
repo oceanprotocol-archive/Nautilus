@@ -1,4 +1,6 @@
 const HDWalletProvider = require('truffle-hdwallet-provider')
+require('dotenv').config()
+const INFURA_ID = process.env.INFURA_ID
 var mnemonic = process.env.NMEMORIC
 
 
@@ -15,7 +17,7 @@ module.exports = {
         // kovan testnet
         kovan: {
             provider: function() {
-              return new HDWalletProvider(process.env.NMEMORIC, "https://kovan.infura.io/Kuo1lxDBsFtMnaw6GiN2")
+              return new HDWalletProvider(process.env.NMEMORIC, "https://kovan.infura.io/v3/" + INFURA_ID)
             },
             network_id: '42',
             websockets: true,
@@ -25,7 +27,7 @@ module.exports = {
         // Rinkeby testnet
         rinkeby: {
             provider: function() {
-              return new HDWalletProvider(process.env.NMEMORIC, "https://rinkeby.infura.io/Kuo1lxDBsFtMnaw6GiN2")
+              return new HDWalletProvider(process.env.NMEMORIC, "https://rinkeby.infura.io/v3/" + INFURA_ID)
             },
             network_id: '4',
             gas: 6000000,
@@ -33,11 +35,11 @@ module.exports = {
         },
         ropsten: {
             provider: function() {
-              return new HDWalletProvider(process.env.NMEMORIC, "https://ropsten.infura.io/Kuo1lxDBsFtMnaw6GiN2")
+              return new HDWalletProvider(process.env.NMEMORIC, "https://ropsten.infura.io/v3/" + INFURA_ID)
             },
+            network_id: '3',
             gas: 6000000,
-            gasPrice: 10000000000, // 10 Gwei
-            network_id: 3
+            gasPrice: 10000000000 // 10 Gwei
         },
     },
     compilers: {
