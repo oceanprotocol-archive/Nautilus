@@ -27,6 +27,7 @@ Folder Name   |  Description | Issue | Update Date |
 3-uniswap | research of adding Ocean to Uniswap | [286](https://github.com/oceanprotocol/ocean/issues/286) | 03/04/2019
 4-chainlink | connect Ocean with Chainlink | [287](https://github.com/oceanprotocol/ocean/issues/287) | 03/07/2019
 5-random-number | integrate Uniswap and Chainlink into Ocean | [288](https://github.com/oceanprotocol/ocean/issues/288) | 03/19/2019
+6-data-token-poc | initial poof-of-concept for data token design | | 11/2019 |
 
 
 ## Supporting Documents
