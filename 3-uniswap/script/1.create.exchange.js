@@ -2,7 +2,7 @@
 // javascript:  transact with deployed Uniswap Factory contract - createExchange
 
 let Web3 = require("web3");
-const Tx = require('ethereumjs-tx')
+const Tx = require('ethereumjs-tx').Transaction
 
 var abi = '[{"name":"NewExchange","inputs":[{"type":"address","name":"token","indexed":true},{"type":"address","name":"exchange","indexed":true}],"anonymous":false,"type":"event"},{"name":"initializeFactory","outputs":[],"inputs":[{"type":"address","name":"template"}],"constant":false,"payable":false,"type":"function","gas":35725},{"name":"createExchange","outputs":[{"type":"address","name":"out"}],"inputs":[{"type":"address","name":"token"}],"constant":false,"payable":false,"type":"function","gas":187911},{"name":"getExchange","outputs":[{"type":"address","name":"out"}],"inputs":[{"type":"address","name":"token"}],"constant":true,"payable":false,"type":"function","gas":715},{"name":"getToken","outputs":[{"type":"address","name":"out"}],"inputs":[{"type":"address","name":"exchange"}],"constant":true,"payable":false,"type":"function","gas":745},{"name":"getTokenWithId","outputs":[{"type":"address","name":"out"}],"inputs":[{"type":"uint256","name":"token_id"}],"constant":true,"payable":false,"type":"function","gas":736},{"name":"exchangeTemplate","outputs":[{"type":"address","name":"out"}],"inputs":[],"constant":true,"payable":false,"type":"function","gas":633},{"name":"tokenCount","outputs":[{"type":"uint256","name":"out"}],"inputs":[],"constant":true,"payable":false,"type":"function","gas":663}]'
 
@@ -17,8 +17,8 @@ const tx = contract.methods.createExchange('0xCC4d8eCFa6a5c1a84853EC5c0c08Cc54Cb
 const encodedABI = tx.encodeABI();
 
 function sendSigned(txData, cb) {
-  const privateKey = new Buffer(privKey, 'hex')
-  const transaction = new Tx(txData)
+  const privateKey = new Buffer.from(privKey, 'hex')
+  const transaction = new Tx(txData), {'chain':'rinkeby'})
   transaction.sign(privateKey)
   const serializedTx = transaction.serialize().toString('hex')
   web3.eth.sendSignedTransaction('0x' + serializedTx, cb)
